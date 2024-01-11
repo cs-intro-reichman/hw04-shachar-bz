@@ -1,6 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        
+        int [] arr = {2, 3, 1};
+        System.out.println(isSorted(arr));
     }
     
     public static int findMissingInt (int [] array) {
@@ -13,6 +14,10 @@ public class ArrayOps {
                 min = array[i];
             }
         }
+
+        // if the group doesnt start with zero return zero
+        if( min == 1)
+            return 0;
 
         boolean isMissing = false;
         boolean nextOne = false;
