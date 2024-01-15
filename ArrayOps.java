@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int [] arr = {2, 3, 1};
+        int [] arr = {1, -2, 3, 4};
         System.out.println(isSorted(arr));
     }
     
@@ -9,13 +9,14 @@ public class ArrayOps {
         
         // find min value
         int min = array[0];
-        for (int i = 1; i < array.length; i++){
-            if( array[i] < min){
-                min = array[i];
+        int count = 0;
+        while(min != 0 && count < array.length){
+            if( array[count] == 0){
+                min = 0;
             }
         }
 
-        // if the group doesnt start with zero return zero
+        // if the group doesnt have the value zero return zero
         if( min == 1)
             return 0;
 
