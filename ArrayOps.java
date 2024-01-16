@@ -14,6 +14,7 @@ public class ArrayOps {
             if( array[count] == 0){
                 min = 0;
             }
+            count++;
         }
 
         // if the group doesnt have the value zero return zero
