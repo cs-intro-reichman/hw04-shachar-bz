@@ -18,7 +18,7 @@ public class ArrayOps {
         }
 
         // if the group doesnt have the value zero return zero
-        if( min == 1)
+        if( min != 0)
             return 0;
 
         boolean isMissing = false;

@@ -22,7 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+       
     }
 
     public static String capVowelsLowRest (String string) {
@@ -56,9 +56,31 @@ public class StringOps {
 
     public static String camelCase (String string) {
         String answer = "";
-        int firstLength = string.indexOf(" ");
+        int count2 = 0;
+        int count1 = 0;
+        // if the word start with space
+        if(string.indexOf(" ") == 0){
+            boolean firstSpace = true;
+            while(firstSpace == true){
+                if(string.charAt(count1) == ' '){
+                    count1 ++;
+                }
+                else{
+                    firstSpace = false;
+                }
+            }
+            count2 = count1;
+        }
+
+        // length of first word 
+        char b = string.charAt(count2);
+        while(b != ' '){
+            count2++;
+            b = string.charAt(count2);
+        }
+
         // make the first word to lowercase
-        for(int i = 0; i < firstLength; i++){
+        for(int i = count1; i < count2; i++){
             char c = string.charAt(i);
             int ascii = (int) c;
             if(ascii > 64 && ascii < 91){
@@ -71,7 +93,7 @@ public class StringOps {
         }
 
         boolean isSpace = true;
-        for(int i = firstLength; i < string.length(); i++){
+        for(int i = count2; i < string.length(); i++){
             char c = string.charAt(i);
             int ascii = (int) c;
             // if char is space delete it form the answer
